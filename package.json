@@ -1,0 +1,32 @@
+{
+  "name": "rehype-add-classes",
+  "version": "1.0.0",
+  "description": "Add classes by selector to a rehype HAST (html) tree",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava",
+    "start": "npm run test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martypdx/rehype-add-classes.git"
+  },
+  "author": "Marty Nelson <marty@martypdx.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martypdx/rehype-add-classes/issues"
+  },
+  "homepage": "https://github.com/martypdx/rehype-add-classes#readme",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "@std/esm": "^0.22.0",
+    "ava": "^1.0.0-beta.3",
+    "eslint": "^4.18.1"
+  },
+  "ava": {
+    "require": "@std/esm"
+  },
+  "@std/esm": "js"
+}
