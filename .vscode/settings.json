@@ -1,0 +1,16 @@
+{
+  "eslint.enable": true,
+  "cSpell.words": [
+    "rehype",
+    "undent"
+  ],
+  "editor.tabSize": 4,
+  "cSpell.ignorePaths": [
+    "**/node_modules/**",
+    "**/vscode-extension/**",
+    "**/.git/**",
+    ".vscode",
+    "typings",
+    "dist"
+  ]
+}
