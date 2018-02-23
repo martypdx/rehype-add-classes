@@ -74,7 +74,8 @@ Example:
     'h1,h2,h3': 'title',
     h1: 'is-1',         
     h2: 'is-2',         
-    p: 'one two'        
+    p: 'one two'
+}       
 ```
 
 * Results are cumulative: `<h1 class="title is-1">`
