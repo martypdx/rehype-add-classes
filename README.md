@@ -5,7 +5,7 @@ Add classes by selector to elements with [**rehype**][rehype].
 Useful for adding
 
 * `hljs` class to `<pre>` tag when converting markdown code snippets to html
-* css framework (like [Bulma](bulma.io)) classes to elements
+* Required css framework classes to elements (for example [Bulma](bulma.io))
 
 ## Installation
 
@@ -60,11 +60,27 @@ Now, running `node example.js` yields:
 
 ## API
 
-### `rehype().use(addClases, options])`
+### `rehype().use(addClasses, additions])`
 
-Add to `rehype` or `unified` pipeline with `.use`, where `options` is an object
+Add to `rehype` or `unified` pipeline with `.use`, where `additions` is an object
 with keys that are the css selectors and the values are a string to add to 
 the `class` of each found node.
+
+Example:
+
+```js
+{
+    pre: 'hljs',         // <pre class="hljs">
+    'h1,h2,h3': 'title', // <h1 class="title">, <h2 class="title>, and <h3 class="title">
+    h1: 'is-1',          // cummulative! <h1 class="title is-1">
+    h2: 'is-2',          // cummulative! <h2 class="title is-2">
+    p: 'one two'         // whole string: <p class="
+}
+```
+
+* Results are cumulative: `<h1 class="title is-1">`
+* `value` is added to existing classes: `<h2 class="existing title is-2">sub 2</h2>`
+* Whole `value` is added: `<p class="one two">`
 
 See [supported selectors](https://github.com/syntax-tree/hast-util-select#support).
 
