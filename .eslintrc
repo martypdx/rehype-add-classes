@@ -16,7 +16,7 @@
   ],
   "rules": {
       "no-console": "warn",
-      "indent": ["error", 2, { "SwitchCase": 1, "ignoreComments": true }],
+      "indent": ["error", 4, { "SwitchCase": 1, "ignoreComments": true }],
       "quotes": ["error", "single"],
       "semi": ["error", "always"],
       "space-in-parens": ["error"],

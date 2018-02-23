@@ -17,11 +17,19 @@
     "url": "https://github.com/martypdx/rehype-add-classes/issues"
   },
   "homepage": "https://github.com/martypdx/rehype-add-classes#readme",
-  "dependencies": {},
+  "dependencies": {
+    "hast-util-select": "^1.0.1"
+  },
   "devDependencies": {
     "@std/esm": "^0.22.0",
-    "ava": "^1.0.0-beta.3",
-    "eslint": "^4.18.1"
+    "ava": "^0.25.0",
+    "eslint": "^4.18.1",
+    "rehype-format": "^2.2.0",
+    "rehype-highlight": "^2.1.0",
+    "rehype-stringify": "^3.0.0",
+    "remark-parse": "^5.0.0",
+    "remark-rehype": "^3.0.0",
+    "unified": "^6.1.6"
   },
   "ava": {
     "require": "@std/esm"
