@@ -1,36 +1,45 @@
 import test from 'ava';
 import unified from 'unified';
-import markdown from 'remark-parse';
-import remark2rehype from 'remark-rehype';
-import highlight from 'rehype-highlight';
-import html from 'rehype-stringify';
-import format from 'rehype-format';
-
-import fs from 'fs';
+import parse from 'rehype-parse';
+import stringify from 'rehype-stringify';
+import vfile from 'vfile';
 
 import addClasses from './add-classes';
 
-const processor = unified()
-    .use(markdown, { gfm: true })
-    .use(remark2rehype)
-    .use(highlight)
-    .use(addClasses, {
-        pre: 'hljs',
-        h1: 'header'
-    })
-    .use(format)
-    .use(html);
+String.prototype.undent = function() {
+    return this.replace(/ {2}/g, '');
+};
 
+test.only('direct rehype and vfile use', t => {
     
-test('adds classes to nodes that match selector', t => {
+    const trans = unified()
+        .use(parse, { fragment: true })
+        .use(addClasses, {
+            pre: 'hljs',
+            'h1,h2,h3': 'title',
+            h1: 'is-1',
+            h2: 'is-2',
+            h3: 'is-3',
+        })
+        .use(stringify);
 
-    const expected = `
-<h1 class="header">Title</h1>
-<pre class="hljs"><code class="hljs language-js"><span class="hljs-keyword">const</span> sum = <span class="hljs-number">1</span> + <span class="hljs-number">2</span>
-</code></pre>
-`;
+    const { contents } = trans.processSync(vfile({ 
+        contents: `
+            <h1>header</h1>
+            <pre><code></code></pre>
+            <h2>subheader 1</h2>
+            <h3>subsubheader</h3>
+            <h2>subheader 2</h2>
+        `
+    }));
 
-    const md = fs.readFileSync('./test.md');
-    const { contents } = processor.processSync(md);
-    t.is(contents, expected);
+    t.is(contents.undent(), `
+        <h1 class="title is-1">header</h1>
+        <pre class="hljs"><code></code></pre>
+        <h2 class="title is-2">subheader 1</h2>
+        <h3 class="title is-3">subsubheader</h3>
+        <h2 class="title is-2">subheader 2</h2>
+    `.undent());
+
+
 });
