@@ -1,18 +1,23 @@
 {
   "name": "rehype-add-classes",
   "version": "1.0.0",
-  "description": "Add classes by selector to a rehype HAST (html) tree",
-  "main": "index.js",
+  "description": "Add classes by selector to a rehype HAST (html tree)",
+  "main": "dist/add-classes.cjs.js",
+  "module": "index.mjs",
   "scripts": {
     "test": "ava",
-    "start": "npm run test -- --watch"
+    "start": "npm run test -- --watch",
+    "lint": "eslint .",
+    "prebuild": "npm run lint && npm run test",
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/martypdx/rehype-add-classes.git"
   },
   "author": "Marty Nelson <marty@martypdx.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/martypdx/rehype-add-classes/issues"
   },
@@ -23,6 +28,9 @@
   "devDependencies": {
     "@std/esm": "^0.22.0",
     "ava": "^0.25.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
     "eslint": "^4.18.1",
     "rehype": "^5.0.1",
     "rehype-format": "^2.2.0",
@@ -31,6 +39,8 @@
     "rehype-stringify": "^3.0.0",
     "remark-parse": "^5.0.0",
     "remark-rehype": "^3.0.0",
+    "rollup": "^0.56.2",
+    "rollup-plugin-babel": "^3.0.3",
     "to-vfile": "^2.2.0",
     "unified": "^6.1.6",
     "vfile": "^2.3.0"

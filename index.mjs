@@ -4,9 +4,7 @@ const { selectAll } = selector;
 
 export default additions => {
     const adders = Object.entries(additions).map(adder);
-    return node => {
-        adders.forEach(a => a(node));
-    };
+    return node => adders.forEach(a => a(node));
 };
 
 const adder = ([selector, className]) => {
@@ -15,6 +13,6 @@ const adder = ([selector, className]) => {
 };
 
 const write = className => ({ properties }) => {
-    if(!properties.class) properties.class = className;
-    else properties.class += ` ${className}`;
+    if(!properties.className) properties.className = className;
+    else properties.className += ` ${className}`;
 };
