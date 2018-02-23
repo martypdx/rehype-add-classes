@@ -70,12 +70,11 @@ Example:
 
 ```js
 {
-    pre: 'hljs',         // <pre class="hljs">
-    'h1,h2,h3': 'title', // <h1 class="title">, <h2 class="title>, and <h3 class="title">
-    h1: 'is-1',          // cummulative! <h1 class="title is-1">
-    h2: 'is-2',          // cummulative! <h2 class="title is-2">
-    p: 'one two'         // whole string: <p class="
-}
+    pre: 'hljs',         
+    'h1,h2,h3': 'title',
+    h1: 'is-1',         
+    h2: 'is-2',         
+    p: 'one two'        
 ```
 
 * Results are cumulative: `<h1 class="title is-1">`
