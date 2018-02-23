@@ -2,10 +2,10 @@
 
 Add classes by selector to elements with [**rehype**][rehype]. 
 
-Useful for adding
+Useful for adding:
 
 * `hljs` class to `<pre>` tag when converting markdown code snippets to html
-* Required css framework classes to elements (for example [Bulma](bulma.io))
+* Required css framework classes to elements (for example using [Bulma][bulma])
 
 ## Installation
 
@@ -82,22 +82,27 @@ Example:
 * `value` is added to existing classes: `<h2 class="existing title is-2">sub 2</h2>`
 * Whole `value` is added: `<p class="one two">`
 
-See [supported selectors](https://github.com/syntax-tree/hast-util-select#support).
+This library uses `hast-util-select` under the hood. See [these details][supported-selectors]
+for supported selectors.
 
 ## License
 
-[MIT][license] ©[Marty Nelson][author]
+[MIT][license] ©2018 [Marty Nelson][author]
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/martypdx/rehype-add-classes.svg
+[author]: https://github.com/martypdx
 
-[travis]: https://travis-ci.org/martypdx/rehype-add-classes
+[bulma]: https://bulma.io
 
 [npm]: https://docs.npmjs.com/cli/install
 
 [license]: LICENSE
 
-[author]: https://github.com/martypdx
-
 [rehype]: https://github.com/rehypejs/rehype
+
+[supported-selectors]: https://github.com/syntax-tree/hast-util-select#support
+
+[travis-badge]: https://img.shields.io/travis/martypdx/rehype-add-classes.svg
+
+[travis]: https://travis-ci.org/martypdx/rehype-add-classes
