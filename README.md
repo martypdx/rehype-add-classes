@@ -80,7 +80,7 @@ Example:
 
 * Results are cumulative: `<h1 class="title is-1">`
 * `value` is added to existing classes: `<h2 class="existing title is-2">sub 2</h2>`
-* Whole `value` is added: `<p class="one two">`
+* Whole of string indicated by `value` is added: `<p class="one two">`
 
 This library uses `hast-util-select` under the hood. See [these details][supported-selectors]
 for supported selectors.
