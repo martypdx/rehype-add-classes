@@ -37,5 +37,5 @@ test('add classes based on css selectors', t => {
         <h2 class="existing title is-2">sub 2</h2>
         <p class="one two"></p>
     `.undent());
-
+    
 });
