@@ -1,4 +1,4 @@
-import test from 'ava';
+import test from 'tape';
 import rehype from 'rehype';
 import vfile from 'vfile';
 
@@ -30,7 +30,8 @@ test('add classes based on css selectors', t => {
         `
     }));
 
-    t.is(contents.undent(), `
+    t.plan(1);
+    t.equal(contents.undent(), `
         <pre class="hljs"><code></code></pre>
         <h1 class="title is-1">header</h1>
         <h2 class="title is-2">sub 1</h2>

@@ -5,8 +5,10 @@
   "main": "dist/add-classes.cjs.js",
   "module": "index.mjs",
   "scripts": {
-    "test": "ava",
-    "start": "npm run test -- --watch",
+    "test": "tape -r @std/esm test.js",
+    "start": "nodemon --exec 'npm run test'",
+    "//test": "ava test.js",
+    "//start": "npm run test -- --watch",
     "lint": "eslint .",
     "prebuild": "npm run lint && npm run test",
     "build": "rollup -c",
@@ -41,6 +43,8 @@
     "remark-rehype": "^3.0.0",
     "rollup": "^0.56.2",
     "rollup-plugin-babel": "^3.0.3",
+    "tape": "^4.9.0",
+    "tape-watch": "^2.3.0",
     "to-vfile": "^2.2.0",
     "unified": "^6.1.6",
     "vfile": "^2.3.0"
