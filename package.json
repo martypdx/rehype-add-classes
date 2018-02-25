@@ -6,9 +6,7 @@
   "module": "index.mjs",
   "scripts": {
     "test": "tape -r @std/esm test.js",
-    "start": "nodemon --exec 'npm run test'",
-    "//test": "ava test.js",
-    "//start": "npm run test -- --watch",
+    "start": "onchange -i index.mjs test.js -- npm test",
     "lint": "eslint .",
     "prebuild": "npm run lint && npm run test",
     "build": "rollup -c",
@@ -34,6 +32,7 @@
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.6.1",
     "eslint": "^4.18.1",
+    "onchange": "^3.3.0",
     "rehype": "^5.0.1",
     "rehype-format": "^2.2.0",
     "rehype-highlight": "^2.1.0",
