@@ -4,6 +4,7 @@
   "description": "Add classes by selector to a rehype HAST (html tree)",
   "main": "dist/add-classes.cjs.js",
   "module": "index.mjs",
+  "type": "module",
   "scripts": {
     "test": "ava",
     "start": "npm run test -- --watch",
