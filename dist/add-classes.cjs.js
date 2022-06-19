@@ -1,6 +1,4 @@
-import selector from 'hast-util-select';
-
-const { selectAll } = selector;
+import { selectAll } from 'hast-util-select';
 
 var index = (function(additions) {
     var adders = Object.entries(additions).map(adder);

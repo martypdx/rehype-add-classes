@@ -1,6 +1,4 @@
-import selector from 'hast-util-select';
-
-const { selectAll } = selector;
+import { selectAll } from 'hast-util-select';
 
 export default additions => {
     const adders = Object.entries(additions).map(adder);
