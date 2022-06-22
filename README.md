@@ -60,7 +60,7 @@ Now, running `node example.js` yields:
 
 ## API
 
-### `rehype().use(addClasses, additions])`
+### `rehype().use(addClasses, additions)`
 
 Add to `rehype` or `unified` pipeline with `.use`, where `additions` is an object
 with keys that are the css selectors and the values are a string to add to 
