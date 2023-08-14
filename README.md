@@ -1,4 +1,8 @@
-# rehype-add-classes [![Build Status][travis-badge]][travis]
+# rehype-add-classes
+
+Consider using this project which has been more recently maintained:
+
+https://github.com/tycol7/rehype-add-classes
 
 Add classes by selector to elements with [**rehype**][rehype]. 
 
