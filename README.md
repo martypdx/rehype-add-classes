@@ -1,8 +1,10 @@
 # rehype-add-classes
 
-Consider using this project which has been more recently maintained:
+Consider using this fork of the project which is currently being maintained:
 
 https://github.com/tycol7/rehype-add-classes
+
+---
 
 Add classes by selector to elements with [**rehype**][rehype]. 
 
